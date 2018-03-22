@@ -1,0 +1,11 @@
+a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+    font-family: Tahoma;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: black;
+}
