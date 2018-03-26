@@ -1,6 +1,6 @@
 <div id="component">
     <div id="pagetitle">
-        <span>{{ pagetitle }}</span>
+        <span>{{ pagetitle }}</span> | <a routerLink="/users/create">Create New</a>
     </div>
     <div id="content">
         <table class="table table-sm">
@@ -10,6 +10,9 @@
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Email</th>
+                    <th>Reviewer</th>
+                    <th>Admin</th>
+                    <th>Active</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -19,10 +22,12 @@
                     <td>{{user.FirstName}} {{user.LastName}}</td>
                     <td>{{user.Phone}}</td>
                     <td>{{user.Email}}</td>
+                    <td>{{user.IsReviewer}}</td>
+                    <td>{{user.IsAdmin}}</td>
+                    <td>{{user.Active}}</td>
                     <td>
                         <a routerLink="/users/detail/{{user.Id}}">Detail</a> |
-                        <a routerLink="/users/edit/{{user.Id}}">Edit</a> |
-                        <a routerLink="/users/delete/{{user.Id}}">Delete</a>
+                        <a routerLink="/users/edit/{{user.Id}}">Edit</a>
                     </td>
                 </tr>
             </tbody>

@@ -1,0 +1,49 @@
+<div id="component">
+    <div id="pagetitle">
+        <span>{{ pagetitle }}</span>
+    </div>
+    <div id="content" *ngIf="product">
+        <table class="table table-sm">
+            <tbody>
+                <tr>
+                    <th>Vendor Id</th>
+                    <td>{{product.Id}}</td>
+                </tr>
+                <tr>
+                    <th>Vendor Part Number</th>
+                    <td>{{product.VendorPartNumber}}</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{product.Name}}</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>{{product.Price | currency}}</td>
+                </tr>
+                <tr>
+                    <th>Unit</th>
+                    <td>{{product.Unit}}</td>
+                </tr>
+                <tr>
+                    <th>Active</th>
+                    <td>{{product.Active}}</td>
+                </tr>
+                <tr>
+                    <th>Date Created</th>
+                    <td>{{product.DateCreated}}</td>
+                </tr>
+                <tr>
+                    <th>Date Updated</th>
+                    <td>{{product.DateUpdated}}</td>
+                </tr>
+                <tr>
+                    <th>Updated By UserId</th>
+                    <td>{{product.UserId}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <a routerLink="/products/edit/{{product.Id}}" class="btn btn-warning">Edit</a>
+        <button (click)="remove()" class="btn btn-danger">Delete</button>
+    </div>
+</div>

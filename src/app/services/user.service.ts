@@ -11,7 +11,7 @@ const url = "http://localhost:54659/Users/";
 @Injectable()
 export class UserService {
   List(): Observable<User[]> {
-    return this.http.get(url + "List") as Observable<User[]>;
+    return this.http.get(url+"List") as Observable<User[]>;
   }
   Get(Id: string): Observable<User> {
     return this.http.get(url+"Get/"+Id) as Observable<User>;  // there is a / after the Get because there is another parameter in the route
