@@ -1,25 +1,19 @@
 export class Product {
          Id: number;
-         VendorId: number;
+         VendorsId: number;
          VendorPartNumber: string;
          Name: string;
          Price: number;
          Unit: string;
          Active: boolean;
-         DateCreated: string;
-         DateUpdated: string;
-         UserId: number;
 
-         constructor(Id: number, VendorId: number, VendorPartNumber: string, Name: string, Price: number, Unit: string,  Active: boolean, DateCreated: string, DateUpdated: string,UserId: number) {
+         constructor(Id: number, VendorsId: number, VendorPartNumber: string, Name: string, Price: number, Unit: string,  Active: boolean) {
            this.Id = Id;
-           this.VendorId = VendorId;
+           this.VendorsId = VendorsId;
            this.VendorPartNumber = VendorPartNumber;
            this.Name = Name;
            this.Price = Price;
            this.Unit = Unit;
            this.Active = Active;
-           this.DateCreated = DateCreated;
-           this.DateUpdated = DateUpdated;
-           this.UserId = UserId;
          }
        }

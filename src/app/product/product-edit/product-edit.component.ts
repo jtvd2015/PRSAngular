@@ -5,7 +5,7 @@ import { ProductService } from "../../services/product.service";
 import { Product } from "../../models/product";
 
 import { VendorService } from "../../services/vendor.service";
-import { Vendor } from "../../models/vendor";
+import { Vendors } from "../../models/vendor";
 
 
 
@@ -17,7 +17,7 @@ import { Vendor } from "../../models/vendor";
 export class ProductEditComponent implements OnInit {
   pagetitle: string = "Product Change";
   product: Product;
-  vendors: Vendor[];
+  vendors: Vendors[];
 
   constructor(
     private ProductSvc: ProductService,

@@ -4,6 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
 
+import { VendorService } from '../../services/vendor.service';
+import { Vendors } from '../../models/vendor';
+
 @Component({
   selector: "app-product-detail",
   templateUrl: "./product-detail.component.html",
@@ -13,12 +16,17 @@ export class ProductDetailComponent implements OnInit {
 
   pagetitle: string = "Product Detail";
   product: Product;
+  isHidden: boolean = true;
 
   constructor(
     private ProductSvc: ProductService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
+
+  verify(): void {
+    this.isHidden = false;
+  }
 
   getProductById(Id) {
     this.ProductSvc.Get(Id).subscribe(product => {

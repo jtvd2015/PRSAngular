@@ -19,8 +19,18 @@ import { ProductDetailComponent } from "./product/product-detail/product-detail.
 import { ProductCreateComponent } from "./product/product-create/product-create.component";
 import { ProductEditComponent } from "./product/product-edit/product-edit.component";
 
+import { PrequestListComponent } from "./prequest/prequest-list/prequest-list.component";
+import { PrequestDetailComponent } from "./prequest/prequest-detail/prequest-detail.component";
+import { PrequestCreateComponent } from "./prequest/prequest-create/prequest-create.component";
+import { PrequestEditComponent } from "./prequest/prequest-edit/prequest-edit.component";
+
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
+
+  { path: "prequest/create", component: PrequestCreateComponent },
+  { path: "prequest/detail/:Id", component: PrequestDetailComponent },
+  { path: "prequest/edit/:Id", component: PrequestEditComponent },
+  { path: "prequest/list", component: PrequestListComponent },
 
   { path: "products/create", component: ProductCreateComponent },
   { path: "products/detail/:Id", component: ProductDetailComponent },

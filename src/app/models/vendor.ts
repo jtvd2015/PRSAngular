@@ -1,4 +1,4 @@
-export class Vendor {
+export class Vendors {
     Id: number;
     Code: string;
     Name: string;
@@ -8,13 +8,10 @@ export class Vendor {
     PostalCode: string;
     Phone: string;
     Email: string;
-    IsPreapproved: boolean;
+    IsPreApproved: boolean;
     Active: boolean;
-    DateCreated: string;
-    DateUpdated: string;
-    UserId: number;
 
-    constructor(Id: number, Code: string, Name: string, Address: string, City: string, State: string, PostalCode: string, Phone: string, Email: string, IsPreapproved: boolean, Active: boolean, DateCreated: string, DateUpdated: string, UserId: number) {
+    constructor(Id: number, Code: string, Name: string, Address: string, City: string, State: string, PostalCode: string, Phone: string, Email: string, IsPreApproved: boolean, Active: boolean) {
         this.Id = Id;
         this.Code = Code;
         this.Name = Name;
@@ -24,10 +21,7 @@ export class Vendor {
         this.PostalCode = PostalCode;
         this.Phone = Phone;
         this.Email = Email;
-        this.IsPreapproved = IsPreapproved;
-        this.Active = Active;
-        this.DateCreated = DateCreated;
-        this.DateUpdated = DateUpdated;
-        this.UserId = UserId;
+        this.IsPreApproved = IsPreApproved;
+        this.Active = Active;        
     }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { VendorService } from '../../services/vendor.service';
-import { Vendor } from '../../models/vendor';
+import { Vendors } from '../../models/vendor';
 
 @Component({
   selector: "app-vendor-detail",
@@ -12,7 +12,7 @@ import { Vendor } from '../../models/vendor';
 export class VendorDetailComponent implements OnInit {
 
   pagetitle: string = "Vendor Create";
-  vendor: Vendor;
+  vendor: Vendors;
 
   constructor(
     private VendorSvc: VendorService,

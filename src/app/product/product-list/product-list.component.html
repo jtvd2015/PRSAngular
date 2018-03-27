@@ -11,11 +11,8 @@
                     <th>Vendor Part Number</th>
                     <th>Price</th>
                     <th>Unit</th>
-                    <th>Vendor Id</th>
+                    <th>Vendor</th>
                     <th>Active</th>
-                    <th>Date Created</th>
-                    <th>Date Updated</th>
-                    <th>Updated By UserId</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -26,11 +23,7 @@
                     <td>{{product.VendorPartNumber}}</td>
                     <td>{{product.Price | currency }}</td>
                     <td>{{product.Unit}}</td>
-                    <td>{{product.VendorId}}</td>
-                    <td>{{product.Active}}</td>
-                    <td>{{product.DateCreated}}</td>
-                    <td>{{product.DateUpdated}}</td>
-                    <td>{{product.UserId}}</td>
+                    <td>{{product.Vendors.Name}}</td>
                     <td>
                         <a routerLink="/products/detail/{{product.Id}}">Detail</a> |
                         <a routerLink="/products/edit/{{product.Id}}">Edit</a>

@@ -5,12 +5,12 @@
     <div id="content" *ngIf="vendor">
         <div class="form-group row">
             <label class='col-form-label col-sm-2' for="vendorcode">Vendor Code:</label>
-            <input [(ngModel)]='vendor.code' name='vendorcode' type="text" class="form-control col-sm-6" id="vendorcode" aria-describedby="VendorCodeHelp" placeholder="Vendor Code">
+            <input [(ngModel)]='vendor.Code' name='vendorcode' type="text" class="form-control col-sm-6" id="vendorcode" aria-describedby="VendorCodeHelp" placeholder="Vendor Code">
             <small id="VendorCodeHelp" class="form-text text-muted col-sm-2">The Vendor Code</small>
         </div>
         <div class="form-group row">
             <label class='col-form-label col-sm-2' for="vendorname">Vendor Name:</label>
-            <input [(ngModel)]='vendor.name' name='vendorname' type="text" class="form-control col-sm-6" id="vendorname" aria-describedby="VendorNameHelp" placeholder="Vendor Name">
+            <input [(ngModel)]='vendor.Name' name='vendorname' type="text" class="form-control col-sm-6" id="vendorname" aria-describedby="VendorNameHelp" placeholder="Vendor Name">
             <small id="VendorNameHelp" class="form-text text-muted col-sm-2">The Vendor Name</small>
         </div>
         <div class="form-group row">
@@ -44,29 +44,14 @@
             <small id="EmailHelp" class="form-text text-muted col-sm-2">The Email</small>
         </div>
         <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="Preapproved">Preapproved:</label>
-            <input [(ngModel)]='vendor.IsPreapproved' name='Preapproved' type="checkbox" class="form-control col-sm-6" id="Preapproved" aria-describedby="PreapprovedHelp" placeholder="Preapproved">
-            <small id="PreapprovedHelp" class="form-text text-muted col-sm-2">Preapproved</small>
+            <label class='col-form-label col-sm-2' for="PreApproved">PreApproved:</label>
+            <input [(ngModel)]='vendor.IsPreApproved' name='PreApproved' type="checkbox" class="form-control col-sm-6" id="PreApproved" aria-describedby="PreApprovedHelp" placeholder="PreApproved">
+            <small id="PreApprovedHelp" class="form-text text-muted col-sm-2">PreApproved</small>
         </div>
         <div class="form-group row">
             <label class='col-form-label col-sm-2' for="Active">Active:</label>
             <input [(ngModel)]='vendor.Active' name='Active' type="checkbox" class="form-control col-sm-6" id="Active" aria-describedby="ActiveHelp" placeholder="Active">
             <small id="ActiveHelp" class="form-text text-muted col-sm-2">Active</small>
-        </div>
-        <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="datecreated">Date Created:</label>
-            <input [(ngModel)]='vendor.DateCreated' name='DateCreated' class="form-control col-sm-6" id="DateCreated" class="form-control col-sm-6" id="DateCreated" aria-describedby="DateCreatedHelp" placeholder="DateCreated">
-            <small id="DateCreatedHelp" class="form-text text-muted col-sm-2">Date Created</small>
-        </div>
-        <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="dateupdated">Date Updated:</label>
-            <input [(ngModel)]='vendor.DateUpdated' name='DateUpdated' class="form-control col-sm-6" id="DateUpdated" class="form-control col-sm-6" id="DateUpdated" aria-describedby="DateUpdatedHelp" placeholder="DateUpdated">
-            <small id="DateUpdatedHelp" class="form-text text-muted col-sm-2">Date Updated</small>
-        </div>
-        <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="userid">Updated by UserId:</label>
-            <input [(ngModel)]='vendor.UserId' name='UserId' class="form-control col-sm-6" id="UpdatedByUserId" class="form-control col-sm-6" id="UserId" aria-describedby="UserIdHelp" placeholder="UserId">
-            <small id="UserIdHelp" class="form-text text-muted col-sm-2">Updated by UserId</small>
         </div>
         <div>
             <button (click)="create()" class="btn btn-success">Add</button>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { VendorService } from '../../services/vendor.service';
-import { Vendor } from '../../models/vendor';
+import { Vendors } from '../../models/vendor';
 
 @Component({
   selector: "app-vendor-edit",
@@ -11,7 +11,7 @@ import { Vendor } from '../../models/vendor';
 })
 export class VendorEditComponent implements OnInit {
   pagetitle: string = "Vendor Change";
-  vendor: Vendor;
+  vendor: Vendors;
 
   constructor(
     private VendorSvc: VendorService,

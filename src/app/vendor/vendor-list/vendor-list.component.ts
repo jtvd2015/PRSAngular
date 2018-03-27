@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from '../../services/vendor.service';
-import { Vendor } from '../../models/vendor';
+import { Vendors } from '../../models/vendor';
 
 @Component({
   selector: 'app-vendor-list',
@@ -11,7 +11,7 @@ export class VendorListComponent implements OnInit {
 
   pagetitle: string = "Vendor List";
 
-  vendors: Vendor[];
+  vendors: Vendors[];
 
   constructor(private VendorSvc: VendorService) { }
 

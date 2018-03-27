@@ -4,30 +4,30 @@
     </div>
     <div id="content" *ngIf="product">
         <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="productPartNumber">Part Number:</label>
-            <input [(ngModel)]='product.PartNumber' name='PartNumber' type="text" class="form-control col-sm-6" id="productPartNumber" aria-describedby="LastNameHelp" placeholder="PartNumber">
-            <small id="PartNumberHelp" class="form-text text-muted col-sm-2">The PartNumber</small>
+            <label class='col-form-label col-sm-2' for="productVendorPartNumber">Part Number:</label>
+            <input [(ngModel)]='product.VendorPartNumber' name='VendorPartNumber' type="text" class="form-control col-sm-6" id="VendorPartNumberNumber" aria-describedby="VendorPartNumberHelp" placeholder="VendorPartNumber">
+            <small id="VendorPartNumberHelp" class="form-text text-muted col-sm-2">The PartNumber</small>
         </div>
         <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="productName">Product Name:</label>
-            <input [(ngModel)]='product.Name' name='Name' type="text" class="form-control col-sm-6" id="productName" aria-describedby="ProductNameHelp" placeholder="ProductName">
-            <small id="ProductNameHelp" class="form-text text-muted col-sm-2">Product Name</small>
+            <label class='col-form-label col-sm-2' for="productName">Name:</label>
+            <input [(ngModel)]='product.Name' name='productName' type="text" class="form-control col-sm-6" id="productName" aria-describedby="productNameHelp" placeholder="productName">
+            <small id="productNameHelp" class="form-text text-muted col-sm-2">The Name</small>
         </div>
         <div class="form-group row">
             <label class='col-form-label col-sm-2' for="productPrice">Price:</label>
-            <input [(ngModel)]='product.Price' name='Price' type="number" class="form-control col-sm-6" id="productPrice" aria-describedby="PriceHelp" placeholder="Price">
-            <small id="PriceHelp" class="form-text text-muted col-sm-2">The Price</small>
+            <input [(ngModel)]='product.Price' name='Price' type="number" class="form-control col-sm-6" id="productPrice" aria-describedby="productPriceHelp" placeholder="productPrice">
+            <small id="productPriceHelp" class="form-text text-muted col-sm-2">The Price</small>
         </div>
         <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="Unit">Unit:</label>
-            <input [(ngModel)]='product.Unit' name='Unit' type="text" class="form-control col-sm-6" id="Unit" aria-describedby="UnitHelp" placeholder="Unit">
-            <small id="UnitHelp" class="form-text text-muted col-sm-2">The Unit</small>
+            <label class='col-form-label col-sm-2' for="productUnit">Unit:</label>
+            <input [(ngModel)]='product.Unit' name='productUnit' type="text" class="form-control col-sm-6" id="productUnit" aria-describedby="productUnitHelp" placeholder="productUnit">
+            <small id="productUnitHelp" class="form-text text-muted col-sm-2">The Unit</small>
         </div>
         <div class='form-group row'>
-            <label class='col-form-label col-sm-2' for="productvendor">Vendor:</label>
+            <label class='col-form-label col-sm-2' for="productVendorName">Vendor:</label>
             <div class='col-sm-6 select-list'>
-                <select [(ngModel)]='product.VendorId' [compareWith]='compareFn' class='form-control' name='Vendor' id='product-Vendor'>
-          <option *ngFor="let vendor of vendors" [ngValue]="vendor.Id" [selected]="vendor.Id == product.VendorId">{{vendor.Name}}</option>
+                <select [(ngModel)]='product.VendorsId' [compareWith]='compareFn' class='form-control' name='Vendors' id='product-Vendors'>
+          <option *ngFor="let vendor of vendors" [ngValue]="vendor.Id" [selected]="vendor.Id == product.VendorsId">{{vendor.Name}}</option>
         </select>
             </div>
         </div>

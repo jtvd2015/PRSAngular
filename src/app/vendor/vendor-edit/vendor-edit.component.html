@@ -53,21 +53,6 @@
             <input [(ngModel)]='vendor.Active' name='Active' type="checkbox" class="form-control col-sm-6" id="Active" aria-describedby="ActiveHelp" placeholder="Active">
             <small id="ActiveHelp" class="form-text text-muted col-sm-2">Active</small>
         </div>
-        <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="DateCreated">Date Created:</label>
-            <input [(ngModel)]='vendor.DateCreated' name='DateCreated' class="form-control col-sm-6" id="DateCreated" class="form-control col-sm-6" id="DateCreated" aria-describedby="DateCreatedHelp" placeholder="DateCreated">
-            <small id="DateCreatedHelp" class="form-text text-muted col-sm-2">Date Created</small>
-        </div>
-        <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="DateUpdated">Date Updated:</label>
-            <input [(ngModel)]='vendor.DateUpdated' name='DateUpdated' class="form-control col-sm-6" id="DateUpdated" class="form-control col-sm-6" id="DateUpdated" aria-describedby="DateUpdatedHelp" placeholder="DateUpdated">
-            <small id="DateUpdatedHelp" class="form-text text-muted col-sm-2">Date Updated</small>
-        </div>
-        <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="UserId">Updated by UserId:</label>
-            <input [(ngModel)]='vendor.UserId' name='UserId' class="form-control col-sm-6" id="UpdatedByUserId" class="form-control col-sm-6" id="UserId" aria-describedby="UserIdHelp" placeholder="UserId">
-            <small id="UserIdHelp" class="form-text text-muted col-sm-2">Updated by UserId</small>
-        </div>
         <div>
             <button (click)="change()" class="btn btn-warning">Change</button>
         </div>

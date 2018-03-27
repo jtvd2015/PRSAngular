@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserService } from './services/user.service';
 import { VendorService } from './services/vendor.service';
 import { ProductService } from './services/product.service';
+import { PurchaseRequestService } from "./services/prequest.service";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './support/home/home.component';
@@ -31,6 +32,11 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 
+import { PrequestListComponent } from './prequest/prequest-list/prequest-list.component';
+import { PrequestDetailComponent } from './prequest/prequest-detail/prequest-detail.component';
+import { PrequestEditComponent } from './prequest/prequest-edit/prequest-edit.component';
+import { PrequestCreateComponent } from "./prequest/prequest-create/prequest-create.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,18 +55,18 @@ import { ProductListComponent } from './product/product-list/product-list.compon
     ProductCreateComponent,
     ProductDetailComponent,
     ProductEditComponent,
-    ProductListComponent
+    ProductListComponent,
+    PrequestListComponent,
+    PrequestDetailComponent,
+    PrequestEditComponent,
+    PrequestCreateComponent
   ],
-  imports: [
-    BrowserModule, 
-    FormsModule, 
-    HttpClientModule, 
-    AppRoutingModule
-    ],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [
     UserService,
     VendorService,
-    ProductService
+    ProductService,
+    PurchaseRequestService
   ],
   bootstrap: [AppComponent]
 })
