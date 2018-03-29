@@ -1,21 +1,21 @@
 export class User {
     Id: number;
-    Username: string;
+    UserName: string;
     Password: string;
-    Firstname: string;
-    Lastname: string;
+    FirstName: string;
+    LastName: string;
     Phone: string;
     Email: string;
     IsReviewer: boolean;
     IsAdmin: boolean;
     Active: boolean;
 
-    constructor(Id: number, Username: string, Password: string, Firstname: string, Lastname: string, Phone: string, Email: string, IsReviewer: boolean, IsAdmin: boolean, Active: boolean) {
+    constructor(Id: number, UserName: string, Password: string, FirstName: string, LastName: string, Phone: string, Email: string, IsReviewer: boolean, IsAdmin: boolean, Active: boolean) {
         this.Id = Id;
-        this.Username = Username;
+        this.UserName = UserName;
         this.Password = Password;
-        this.Firstname = Firstname;
-        this.Lastname = Lastname;
+        this.FirstName = FirstName;
+        this.LastName = LastName;
         this.Phone = Phone;
         this.Email = Email;
         this.IsReviewer = IsReviewer;

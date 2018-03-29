@@ -1,0 +1,49 @@
+<div id="component">
+    <div id="pagetitle">
+        <span>{{ pagetitle }}</span>
+    </div>
+    <div id="content" *ngIf="purchaseRequest">
+        <table class="table table-sm">
+            <tr>
+                <th>Id</th>
+                <td>{{purchaseRequest.Id}}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{purchaseRequest.Description}}</td>
+            </tr>
+            <tr>
+                <th>Justification</th>
+                <td>{{purchaseRequest.Justification}}</td>
+            </tr>
+            <tr>
+                <th>RejectionReason</th>
+                <td>{{purchaseRequest.ReasonForRejection}}</td>
+            </tr>
+            <tr>
+                <th>DeliveryMode</th>
+                <td>{{purchaseRequest.DeliveryMode}}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{purchaseRequest.Status}}</td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td>{{purchaseRequest.Total | currency}}</td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td>{{purchaseRequest.Users.FirstName}}</td>
+            </tr>
+        </table>
+        <a routerLink="/purchaseRequests/edit/{{purchaseRequest.Id}}" class="btn btn-warning">Edit</a> |
+        <button (click)="verify()" class="btn btn-danger">Delete</button>
+        <span [hidden]="isHidden">|
+      <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
+    </span>
+        <span [hidden]="purchaseRequest.Status=='REVIEW'">|
+      <button (click)="review()" class="btn btn-primary">Review</button>
+    </span>
+    </div>
+</div>
