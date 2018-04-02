@@ -42,7 +42,7 @@
             <label class='col-form-label col-sm-2' for="purchaseRequestuser">User:</label>
             <div class='col-sm-6 select-list'>
                 <select [(ngModel)]='purchaseRequest.UsersId' [compareWith]='compareFn' class='form-control' name='User' id='purchaseRequest-User'>
-          <option *ngFor="let user of users" [ngValue]="user.Id" [selected]="user.Id == purchaseRequest.UserId">{{user.FirstName}}</option>
+          <option *ngFor="let user of users" [ngValue]="user.Id" [selected]="user.Id == purchaseRequest.UsersId">{{user.FirstName}}</option>
         </select>
             </div>
         </div>

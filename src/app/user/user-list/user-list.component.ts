@@ -9,7 +9,7 @@ import { User } from '../../models/user';
 })
 export class UserListComponent implements OnInit {
 
-  pagetitle: string = "User List";
+  pagetitle: string = 'User List';
 
   users: User[];
 

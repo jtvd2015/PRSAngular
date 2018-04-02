@@ -4,6 +4,12 @@
     </div>
     <div id="content" *ngIf="purchaseRequest">
         <div class="form-group row">
+            <label class='col-form-label col-sm-2' for="purchaseRequestDateCreated">Date Created:</label>
+            <input [(ngModel)]='purchaseRequest.DateCreated' name='DateCreated' type="text" class="form-control col-sm-6" id="purchaseRequestDateCreated"
+                aria-describedby="DateCreatedHelp" placeholder="DateCreated">
+            <small id="DateCreatedHelp" class="form-text text-muted col-sm-2">The Description</small>
+        </div>
+        <div class="form-group row">
             <label class='col-form-label col-sm-2' for="purchaseRequestDescription">Description:</label>
             <input [(ngModel)]='purchaseRequest.Description' name='Description' type="text" class="form-control col-sm-6" id="purchaseRequestDescription" aria-describedby="DescriptionHelp" placeholder="Description">
             <small id="DescriptionHelp" class="form-text text-muted col-sm-2">The Description</small>

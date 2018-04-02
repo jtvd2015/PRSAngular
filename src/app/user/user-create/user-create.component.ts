@@ -11,7 +11,7 @@ import { User } from '../../models/user';
 })
 export class UserCreateComponent implements OnInit {
 
-  pagetitle: string = "User Create";
+  pagetitle: string = 'User Create';
   user: User = new User(0, '', '', '', '', '', '', false, false, true);
 
   constructor(
@@ -23,11 +23,11 @@ export class UserCreateComponent implements OnInit {
     this.UserSvc.Create(this.user)
       .subscribe(res => {
         console.log(res);
-        this.router.navigateByUrl("/users/list");
+        this.router.navigateByUrl('/users/list');
       });
   }
 
-  ngOnInit() { 
+  ngOnInit() {
   }
 
 }

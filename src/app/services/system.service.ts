@@ -1,8 +1,8 @@
 import { User } from '../models/user';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 
-const baseUrl = "http://localhost:54659";
+const baseUrl = 'http://localhost:54659';
 
 export class SystemService {
   isLogin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -22,11 +22,11 @@ export class SystemService {
 
   setLoggedInUser(user: User): void {
     this.loggedInUser = user;
-    console.log("Logged in user set:", this.loggedInUser);
+    console.log('Logged in user set:', this.loggedInUser);
   }
   clearLoggedInUser(): void {
     this.loggedInUser = null;
-    console.log("Logged in user cleared:", this.loggedInUser);
+    console.log('Logged in user cleared:', this.loggedInUser);
   }
   //get isLoggedIn(): boolean {
   //  return this.loggedInUser != null;
@@ -38,9 +38,9 @@ export class SystemService {
     seg1: string = null,
     seg2: string = null
   ): string {
-    let aUrl = baseUrl + "/" + controller + "/" + method + "/";
-    aUrl += seg1 != null ? seg1 + "/" : "";
-    aUrl += seg2 != null ? seg2 + "/" : "";
+    let aUrl = baseUrl + '/' + controller + '/' + method + '/';
+    aUrl += seg1 != null ? seg1 + '' : '';
+    aUrl += seg2 != null ? seg2 + '/' : '';
     return aUrl;
   }
 }

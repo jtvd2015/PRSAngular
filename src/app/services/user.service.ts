@@ -5,35 +5,35 @@ import { SystemService } from '../services/system.service';
 
 import { User } from '../models/user';
 
-const url = "http://localhost:54659/Users/";
+const url = 'http://localhost:54659/Users/';
 
 @Injectable()
 export class UserService {
 
   constructor(
-    private http: HttpClient, 
+    private http: HttpClient,
     private sys: SystemService
   ) {}
 
   Login(username: string, password: string): Observable<any> {
-    let furl = this.sys.url("Users", "Login", username, password);
+    let furl = this.sys.url('Users', 'Login', username, password);
     return this.http.get(furl) as Observable<any>;
     // return this.http.get(url+"Login/"+username+"/"+password) as Observable<any>;
   }
   List(): Observable<User[]> {
-    return this.http.get(url + "List") as Observable<User[]>;
+    return this.http.get(url + 'List') as Observable<User[]>;
   }
   Get(Id: string): Observable<User> {
-    return this.http.get(url + "Get/" + Id) as Observable<User>; // there is a / after the Get because there is another parameter in the route
+    return this.http.get(url + 'Get/' + Id) as Observable<User>; // there is a / after the Get because there is another parameter in the route
   }
   Create(user: User): Observable<any> {
     //user: User is an instance of User
-    return this.http.post(url + "Create", user) as Observable<any>;
+    return this.http.post(url + 'Create', user) as Observable<any>;
   }
   Change(user: User): Observable<any> {
-    return this.http.post(url + "Change", user) as Observable<any>;
+    return this.http.post(url + 'Change', user) as Observable<any>;
   }
   Remove(user: User): Observable<any> {
-    return this.http.post(url + "Remove", user) as Observable<any>;
+    return this.http.post(url + 'Remove', user) as Observable<any>;
   }
 }

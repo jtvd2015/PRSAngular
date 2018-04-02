@@ -7,6 +7,7 @@
             <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Date Created</th>
                     <th>Description</th>
                     <th>Justification</th>
                     <th>Status</th>
@@ -18,6 +19,7 @@
             <tbody>
                 <tr *ngFor="let purchaseRequest of purchaseRequests">
                     <td>{{ purchaseRequest.Id }}</td>
+                    <td>{{ purchaseRequest.DateCreated }}</td>
                     <td>{{ purchaseRequest.Description }}</td>
                     <td>{{ purchaseRequest.Justification }}</td>
                     <td>{{ purchaseRequest.Status }}</td>

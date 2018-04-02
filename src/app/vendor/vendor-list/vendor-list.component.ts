@@ -9,7 +9,7 @@ import { Vendors } from '../../models/vendor';
 })
 export class VendorListComponent implements OnInit {
 
-  pagetitle: string = "Vendor List";
+  pagetitle: string = 'Vendor List';
 
   vendors: Vendors[];
 

@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { ProductService } from "../../services/product.service";
-import { Product } from "../../models/product";
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product';
 
-import { VendorService } from "../../services/vendor.service";
-import { Vendors } from "../../models/vendor";
+import { VendorService } from '../../services/vendor.service';
+import { Vendors } from '../../models/vendor';
 
 
 
 @Component({
-  selector: "app-product-edit",
-  templateUrl: "./product-edit.component.html",
-  styleUrls: ["./product-edit.component.css"]
+  selector: 'app-product-edit',
+  templateUrl: './product-edit.component.html',
+  styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
-  pagetitle: string = "Product Change";
+  pagetitle: string = 'Product Change';
   product: Product;
   vendors: Vendors[];
 
@@ -37,7 +37,7 @@ export class ProductEditComponent implements OnInit {
     this.ProductSvc.Change(this.product)
       .subscribe(res => {
         console.log(res);
-          this.router.navigateByUrl("/products/list");
+          this.router.navigateByUrl('/products/list');
     });
   }
 
@@ -45,7 +45,7 @@ export class ProductEditComponent implements OnInit {
     this.ProductSvc.Get(Id)
       .subscribe(product => {
         this.product = product;
-          console.log("Product:", product);
+          console.log('Product:', product);
     });
   }
 
@@ -53,11 +53,11 @@ export class ProductEditComponent implements OnInit {
     this.VendorSvc.List()
       .subscribe(vendors => {
         this.vendors = vendors;
-          console.log("Vendors", vendors);
+          console.log('Vendors', vendors);
     });
 
     this.route.params.subscribe(params => {
-      let Id = params["Id"];
+      let Id = params['Id'];
       this.getProductById(Id);
     });
   }

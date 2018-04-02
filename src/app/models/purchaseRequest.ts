@@ -8,6 +8,7 @@ export class PurchaseRequest {
          Total: number;
          Active: boolean;
          ReasonForRejection: string;
+         DateCreated: number;
 
          constructor(Id: number, UsersId: number, Description: string, Justification: string, DeliveryMode: string, Status: string, Total: number, Active: boolean, ReasonForRejection: string) {
            this.Id = Id;

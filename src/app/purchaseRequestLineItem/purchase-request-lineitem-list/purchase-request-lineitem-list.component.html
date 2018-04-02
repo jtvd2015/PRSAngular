@@ -1,14 +1,14 @@
 <div id="component">
     <div id="pagetitle">
-        <span>{{ pagetitle }}</span> | <a routerLink="/purchaseRequestLineItems/create">Create New</a>
+        <span>{{ pagetitle }}</span> | <a routerLink="/purchaseRequestLineItems/create/>Create New"></a>
     </div>
     <div id="content">
         <table class="table table-sm">
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>PurchaseRequestsId</th>
-                    <th>ProductsId</th>
+                    <th>User</th>
+                    <th>Vendor</th>
                     <th>Quantity</th>
                     <th>Active</th>
                     <th>Actions</th>
@@ -23,9 +23,8 @@
                     <td>{{ PurchaseRequestLineItem.Active }}</td>
                     <td>
                         <a routerLink="/purchaseRequestLineItems/detail/{{purchaseRequestLineItem.Id}}">Detail</a> |
-                        <a routerLink="/purchaseRequestLineItems/edit/{{purchaseRequestLineItem.Id}}">Edit</a>
-                        <!-- |
-                        <a routerLink="/purchaseRequestLineItems/lines/{{purchaseRequestLineItem.Id}}">Lines</a> -->
+                        <a routerLink="/purchaseRequestLineItems/edit/{{purchaseRequestLineItem.Id}}">Edit</a> |
+                        <a routerLink="/purchaseRequestLineItems/lines/{{purchaseRequestLineItem.Id}}">Lines</a>
                     </td>
                 </tr>
             </tbody>

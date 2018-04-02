@@ -1,20 +1,23 @@
-import { Component, OnInit } from "@angular/core";
-import { PurchaseRequestService } from "../../services/purchaseRequest.service";
-import { PurchaseRequest } from "../../models/purchaseRequest";
-import { SystemService } from "../../services/system.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PurchaseRequestService } from '../../services/purchaseRequest.service';
+import { PurchaseRequest } from '../../models/purchaseRequest';
+import { SystemService } from '../../services/system.service';
 
 @Component({
-  selector: "app-purchase-request-list",
-  templateUrl: "./purchase-request-list.component.html",
-  styleUrls: ["./purchase-request-list.component.css"]
+  selector: 'app-purchase-request-list',
+  templateUrl: './purchase-request-list.component.html',
+  styleUrls: ['./purchase-request-list.component.css']
 })
 export class PurchaseRequestListComponent implements OnInit {
-  pagetitle: string = "Purchase Request List";
+  pagetitle: string = 'Purchase Request List';
   purchaseRequests: PurchaseRequest[];
 
   constructor(
     private SysSvc: SystemService,
-    private PurchaseRequestSvc: PurchaseRequestService
+    private PurchaseRequestSvc: PurchaseRequestService,
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {

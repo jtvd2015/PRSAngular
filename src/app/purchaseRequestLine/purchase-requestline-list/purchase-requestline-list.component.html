@@ -1,0 +1,28 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span> |
+    <a routerLink="/purchaseRequestLine/create/>Create New"></a>
+  </div>
+  <div id="content">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>User</th>
+          <th>Vendor</th>
+          <th>Quantity</th>
+          <th>Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let purchaseRequestLineItem of purchaseRequestLineItems">
+          <td>{{ PurchaseRequestLineItem.Id }}</td>
+          <td>{{ PurchaseRequestLineItem.PurchaseRequests.Users.FirstName }}</td>
+          <td>{{ PurchaseRequestLineItem.Products.Vendors.Name }}</td>
+          <td>{{ PurchaseRequestLineItem.Quantity }}</td>
+          <td>{{ PurchaseRequestLineItem.Active }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

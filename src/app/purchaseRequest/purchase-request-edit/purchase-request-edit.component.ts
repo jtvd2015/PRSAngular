@@ -1,19 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { PurchaseRequestService } from "../../services/purchaseRequest.service";
-import { PurchaseRequest } from "../../models/purchaseRequest";
-import { UserService } from "../../services/user.service";
-import { User } from "../../models/user";
-import { SystemService } from "../../services/system.service";
+import { PurchaseRequestService } from '../../services/purchaseRequest.service';
+import { PurchaseRequest } from '../../models/purchaseRequest';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/user';
+import { SystemService } from '../../services/system.service';
 
 @Component({
-  selector: "app-purchase-request-edit",
-  templateUrl: "./purchase-request-edit.component.html",
-  styleUrls: ["./purchase-request-edit.component.css"]
+  selector: 'app-purchase-request-edit',
+  templateUrl: './purchase-request-edit.component.html',
+  styleUrls: ['./purchase-request-edit.component.css']
 })
 export class PurchaseRequestEditComponent implements OnInit {
-  pagetitle: string = "PurchaseRequest Change";
+  pagetitle: string = 'PurchaseRequest Change';
   purchaseRequest: PurchaseRequest;
   users: User[];
 
@@ -34,26 +34,26 @@ export class PurchaseRequestEditComponent implements OnInit {
   change(): void {
     this.PurchaseRequestSvc.Change(this.purchaseRequest).subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl("/purchaseRequests/list");
+      this.router.navigateByUrl('/purchaseRequests/list');
     });
   }
 
-  getPurchaseRequestById(id) {
-    this.PurchaseRequestSvc.Get(id).subscribe(purchaseRequest => {
-      this.purchaseRequest = purchaseRequest;
-      console.log("PurchaseRequest:", purchaseRequest);
+  getPurchaseRequestById(Id) {
+    this.PurchaseRequestSvc.Get(Id).subscribe(purchaseRequests => {
+      this.purchaseRequest = purchaseRequests;
+      console.log('PurchaseRequest:', purchaseRequests);
     });
   }
 
   ngOnInit() {
     this.UserSvc.List().subscribe(users => {
       this.users = users;
-      console.log("Users", users);
+      console.log('Users', users);
     });
 
     this.route.params.subscribe(params => {
-      let id = params["id"];
-      this.getPurchaseRequestById(id);
+      let Id = params['Id'];
+      this.getPurchaseRequestById(Id);
     });
   }
 }

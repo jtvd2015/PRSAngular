@@ -8,13 +8,13 @@ import { VendorService } from '../../services/vendor.service';
 import { Vendors } from '../../models/vendor';
 
 @Component({
-  selector: "app-product-detail",
-  templateUrl: "./product-detail.component.html",
-  styleUrls: ["./product-detail.component.css"]
+  selector: 'app-product-detail',
+  templateUrl: './product-detail.component.html',
+  styleUrls: ['./product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
 
-  pagetitle: string = "Product Detail";
+  pagetitle: string = 'Product Detail';
   product: Product;
   isHidden: boolean = true;
 
@@ -31,7 +31,7 @@ export class ProductDetailComponent implements OnInit {
   getProductById(Id) {
     this.ProductSvc.Get(Id).subscribe(product => {
       this.product = product;
-      console.log("Product:", product);
+      console.log('Product:', product);
     });
   }
 
@@ -39,12 +39,12 @@ export class ProductDetailComponent implements OnInit {
     this.ProductSvc.Remove(this.product).subscribe(res => {
       console.log(res);
     });
-    this.router.navigateByUrl("/products/list");
+    this.router.navigateByUrl('/products/list');
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      let Id = params["Id"];
+      let Id = params['Id'];
       this.getProductById(Id);
     });
   }

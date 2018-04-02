@@ -11,8 +11,8 @@ import { User } from '../../models/user';
 })
 export class UserLoginComponent implements OnInit {
 
-  user: User = new User(0, "", "", "", "", "", "", false, false, false);
-  message: string = "";
+  user: User = new User(0, '', '', '', '', '', '', false, false, false);
+  message: string = '';
 
   constructor(
     private UserSvc: UserService,
@@ -23,14 +23,14 @@ export class UserLoginComponent implements OnInit {
   login(): void {
     this.UserSvc.Login(this.user.UserName, this.user.Password)
     .subscribe(res => {
-      if(res.Result.toUpperCase() === "SUCCESS") {
+      if(res.Result.toUpperCase() === 'SUCCESS') {
       this.user = res.Data;
       this.SysSvc.setNotLogin();
       this.SysSvc.setLoggedInUser(this.user);
-      console.log("Login Successful:", res.Message);
-      this.router.navigateByUrl("/home");
+      console.log('Login Successful:', res.Message);
+      this.router.navigateByUrl('/home');
       } else {
-        console.error("Login Failed:", res.Message);
+        console.error('Login Failed:', res.Message);
         this.message = res.Message;
       }
     });

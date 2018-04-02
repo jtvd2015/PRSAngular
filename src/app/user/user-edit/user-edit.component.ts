@@ -11,7 +11,7 @@ import { User } from '../../models/user';
 })
 export class UserEditComponent implements OnInit {
 
-  pagetitle: string = "User Change";
+  pagetitle: string = 'User Change';
   user: User;
 
   constructor(
@@ -24,7 +24,7 @@ export class UserEditComponent implements OnInit {
     this.UserSvc.Change(this.user)
       .subscribe(res => {
         console.log(res);
-        this.router.navigateByUrl("/users/list");
+        this.router.navigateByUrl('/users/list');
       });
   }
 
@@ -32,14 +32,14 @@ export class UserEditComponent implements OnInit {
     this.UserSvc.Get(Id)
       .subscribe(user => {
         this.user = user;
-        console.log("User:", user);
+        console.log('User:', user);
       });
   }  
 
   ngOnInit() {
     this.route.params
       .subscribe(params => {
-        let Id = params["Id"];
+        let Id = params['Id'];
         this.getUserById(Id);
       });  
     }

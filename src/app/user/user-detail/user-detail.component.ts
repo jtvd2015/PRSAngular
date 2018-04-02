@@ -5,13 +5,13 @@ import { UserService } from '../../services/user.service';
 import { User } from '../../models/user';
 
 @Component({
-  selector: "app-user-detail",
-  templateUrl: "./user-detail.component.html",
-  styleUrls: ["./user-detail.component.css"]
+  selector: 'app-user-detail',
+  templateUrl: './user-detail.component.html',
+  styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
 
-  pagetitle: string = "User Detail";
+  pagetitle: string = 'User Detail';
   user: User;
 
   constructor(
@@ -23,19 +23,19 @@ export class UserDetailComponent implements OnInit {
   getUserById(Id) {
     this.UserSvc.Get(Id).subscribe(user => {
       this.user = user;
-      console.log("User:", user);
+      console.log('User:', user);
     });
   }
   remove(): void {
     this.UserSvc.Remove(this.user).subscribe(res => {
       console.log(res);
     });
-    this.router.navigateByUrl("/users/list");
+    this.router.navigateByUrl('/users/list');
   }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      let Id = params["Id"];
+      let Id = params['Id'];
       this.getUserById(Id);
     });
   }

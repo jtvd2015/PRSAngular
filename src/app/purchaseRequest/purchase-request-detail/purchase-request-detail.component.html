@@ -9,6 +9,10 @@
                 <td>{{purchaseRequest.Id}}</td>
             </tr>
             <tr>
+                <th>Date Created</th>
+                <td>{{purchaseRequest.DateCreated}}</td>
+            </tr>
+            <tr>
                 <th>Description</th>
                 <td>{{purchaseRequest.Description}}</td>
             </tr>
@@ -39,9 +43,9 @@
         </table>
         <a routerLink="/purchaseRequests/edit/{{purchaseRequest.Id}}" class="btn btn-warning">Edit</a> |
         <button (click)="verify()" class="btn btn-danger">Delete</button>
-        <span [hidden]="isHidden">|
+        <!--<span [hidden]="isHidden">|
       <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
-    </span>
+    </span>-->
         <span [hidden]="purchaseRequest.Status=='REVIEW'">|
       <button (click)="review()" class="btn btn-primary">Review</button>
     </span>

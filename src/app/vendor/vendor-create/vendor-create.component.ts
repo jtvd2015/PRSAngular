@@ -12,9 +12,8 @@ import { Vendors } from '../../models/vendor';
 })
 export class VendorCreateComponent implements OnInit {
 
-  pagetitle: string = "Vendor Create";
+  pagetitle: string = 'Vendor Create';
   vendor: Vendors = new Vendors(0, '', '', '', '', '', '', '', '', false, true);
-  
 
   constructor(
     private VendorSvc: VendorService,
@@ -22,14 +21,13 @@ export class VendorCreateComponent implements OnInit {
   ) { }
 
   create(): void {
-    console.log("Vendor B4 Create:", this.vendor);
+    console.log('Vendor B4 Create:', this.vendor);
     this.VendorSvc.Create(this.vendor)
       .subscribe(res => {
         console.log(res);
-        this.router.navigateByUrl("/vendors/list");
+        this.router.navigateByUrl('/vendors/list');
       });
   }
-  
   ngOnInit() {
   }
 

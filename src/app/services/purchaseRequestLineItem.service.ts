@@ -1,29 +1,29 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs/Observable";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
-import { PurchaseRequestLineItem } from "../models/prLineItem";
+import { PurchaseRequestLineItem } from '../models/purchaseRequestLineItem';
 
-const url = "http://localhost:54659/PurchaseRequestLineItems/";
+const url = 'http://localhost:54659/PurchaseRequestLineItems/';
 
 @Injectable()
 export class PurchaseRequestLineItemService {
   List(): Observable<PurchaseRequestLineItem[]> {
-    return this.http.get(url + "List") as Observable<PurchaseRequestLineItem[]>;
+    return this.http.get(url + 'List') as Observable<PurchaseRequestLineItem[]>;
   }
   Get(Id: string): Observable<PurchaseRequestLineItem> {
-    return this.http.get(url + "Get/" + Id) as Observable<
+    return this.http.get(url + 'Get/' + Id) as Observable<
       PurchaseRequestLineItem
     >;
   }
   Create(purchaseRequestLineItem: PurchaseRequestLineItem): Observable<any> {
-    return this.http.post(url + "Create", purchaseRequestLineItem) as Observable<any>;
+    return this.http.post(url + 'Create', purchaseRequestLineItem) as Observable<any>;
   }
   Change(purchaseRequestLineItem: PurchaseRequestLineItem): Observable<any> {
-    return this.http.post(url + "Change", purchaseRequestLineItem) as Observable<any>;
+    return this.http.post(url + 'Change', purchaseRequestLineItem) as Observable<any>;
   }
   Remove(purchaseRequestLineItem: PurchaseRequestLineItem): Observable<any> {
-    return this.http.post(url + "Remove", purchaseRequestLineItem) as Observable<any>;
+    return this.http.post(url + 'Remove', purchaseRequestLineItem) as Observable<any>;
   }
 
   constructor(private http: HttpClient) {}
