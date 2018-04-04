@@ -1,3 +1,17 @@
-<p>
-  home works!
-</p>
+<div id="component">
+  <div id="pagetitle">
+    <!-- <span>{{ pagetitle }}</span>-->
+  </div>
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Welcome {{currentUser.FirstName}}!</h1>
+    <p>You're logged in with Angular 5!!</p>
+    <h3>All registered users:</h3>
+    <ul>
+      <li *ngFor="let user of users">
+        {{user.UserName}} ({{user.FirstName}} {{user.LastName}})
+      </li>
+    </ul>
+    <!--<p>
+      <a [routerLink]="['/login']">Logout</a>
+    </p> -->
+  </div>

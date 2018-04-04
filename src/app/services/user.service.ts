@@ -9,15 +9,17 @@ const url = 'http://localhost:54659/Users/';
 
 @Injectable()
 export class UserService {
+  constructor(private http: HttpClient, private sys: SystemService) {}
 
-  constructor(
-    private http: HttpClient,
-    private sys: SystemService
-  ) {}
+  getAll() {
+    return this.http.get<User[]>('/api/users');
+  }
 
   Login(UserName: string, Password: string): Observable<any> {
     let furl = this.sys.url('Users', 'Login', UserName, Password);
-    return this.http.get(url+"Login/"+UserName+"/"+Password) as Observable<any>;
+    return this.http.get(
+      url + 'Login/' + UserName + '/' + Password
+    ) as Observable<any>;
   }
   List(): Observable<User[]> {
     return this.http.get(url + 'List') as Observable<User[]>;
