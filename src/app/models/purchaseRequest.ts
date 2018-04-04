@@ -10,6 +10,7 @@ export class PurchaseRequest {
          ReasonForRejection: string;
          DateCreated: number;
 
+         // tslint:disable-next-line:max-line-length
          constructor(Id: number, UsersId: number, Description: string, Justification: string, DeliveryMode: string, Status: string, Total: number, Active: boolean, ReasonForRejection: string) {
            this.Id = Id;
            this.UsersId = UsersId;

@@ -3,7 +3,7 @@
         <span>{{ pagetitle }}</span>
     </div>
     <div id="content"  *ngIf="user">
-        <table class="table table-sm">
+        <table class="table table-striped">
             <tbody>
                 <tr>
                     <th>User Name</th>
@@ -35,7 +35,7 @@
                 </tr>
             </tbody>
         </table>
-        <a routerLink="/users/edit/{{user.Id}}" class="btn btn-warning">Edit</a>
-        <button (click)="remove()" class="btn btn-danger">Delete</button>
+        <a routerLink="/users/edit/{{user.Id}}" class="btn btn-outline-warning">Edit</a>
+        <button (click)="remove()" class="btn btn-outline-danger">Delete</button>
     </div>
 </div>

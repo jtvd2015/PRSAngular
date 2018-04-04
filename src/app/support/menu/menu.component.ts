@@ -9,15 +9,14 @@ import { Menu } from './menu';
 export class MenuComponent implements OnInit {
 
   menuItems: Menu[] = [
-    new Menu("Home", "/home", "Home Page"),
-    new Menu("Users", "/users/list", "User List Display Page"),
-    new Menu("Vendors", "/vendors/list", "Vendor List Display Page"),
-    new Menu("Products", "/products/list", "Product List Display Page"),
-    new Menu("Purchase Requests", "/purchaseRequests/list", "Purchase Request List Display Page"),
-    new Menu("PRLI", "/purchaseRequestLineItems/list", "Purchase Request Line Item List Display Page" 
-    ),
-    new Menu("Login/Out", "/users/login", "The Login Page"),
-    new Menu("About", "/about", "About Page")
+    new Menu('Home', '/home', 'Home Page'),
+    new Menu('Users', '/users/list', 'User List Display Page'),
+    new Menu ('Vendors', '/vendors/list', 'Vendor List Display Page'),
+    new Menu('Products', '/products/list', 'Product List Display Page'),
+    new Menu('Purchase Requests', '/purchaseRequests/list', 'Purchase Request List Display Page'),
+    new Menu ('Review', '/purchaseRequests/review', 'Review Line Item List Display'),
+    new Menu('Login/Out', '/users/login', 'The Login Page'),
+    new Menu('About', '/about', 'About Page')
   ];
 
   constructor() { }

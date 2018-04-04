@@ -1,0 +1,33 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Description</th>
+          <th>DeliveryMode</th>
+          <th>Status</th>
+          <th>Total</th>
+          <th>Active</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let purchaseRequest of purchaseRequests">
+          <td>{{purchaseRequest.Users.FirstName+" "+purchaseRequest.Users.LastName}}</td>
+          <td>{{ purchaseRequest.Description }}</td>
+          <td>{{ purchaseRequest.DeliveryMode }}</td>
+          <td>{{ purchaseRequest.Status }}</td>
+          <td>{{ purchaseRequest.Total | currency }}</td>
+          <td>{{ purchaseRequest.Active }}</td>        
+          <td>
+            <a routerLink="/purchaseRequests/review/{{purchaseRequest.Id}}">Review</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

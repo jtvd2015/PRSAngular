@@ -1,0 +1,13 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content" *ngIf="purchaseRequestLineItem">
+    <table class="table table-striped">
+      <tr><th>Product</th><td>{{purchaseRequestLineItem.Products.Name }}</td></tr>
+      <tr><th>Quantity</th><td>{{purchaseRequestLineItem.Quantity}}</td></tr>
+    </table>
+    <a routerLink="/purchaseRequestLineItems/edit/{{purchaseRequestId}}/{{purchaseRequestLineItem.Id}}" class="btn btn-outline-warning">Edit</a> | 
+    <button (click)="remove()" class="btn btn-outline-danger">Delete</button>
+  </div>
+</div>

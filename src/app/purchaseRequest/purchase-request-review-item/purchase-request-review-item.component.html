@@ -1,0 +1,53 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content" *ngIf="purchaseRequest">
+    <table class="table table-striped">
+      <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Justification</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User</th>
+      </tr>
+      <tr>
+        <td>{{purchaseRequest.Id}}</td>
+        <td>{{purchaseRequest.Description }}</td>
+        <td>{{purchaseRequest.Justification}}</td>
+        <td>{{purchaseRequest.Status}}</td>
+        <td>{{purchaseRequest.Total | currency}}</td>
+        <td>{{purchaseRequest.Users.FirstName+" "+purchaseRequest.Users.LastName}}</td>
+      </tr>
+    </table>
+    <hr />
+    <table class="table table-sm">
+      <tr>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+      </tr>
+      <tr *ngFor="let purchaseRequestLineitem of purchaseRequest.PurchaseRequestLineitems">
+        <td>{{ purchaseRequestLineitem.Id }}</td>
+        <td>{{ purchaseRequestLineitem.Products.Name }}</td>
+        <td>{{ purchaseRequestLineitem.Quantity }}</td>
+        <td>{{ purchaseRequestLineitem.Products.Price | currency }}</td>
+        <td>{{ (purchaseRequestLineitem.Quantity * purchaseRequestLineitem.Products.Price) | currency }}</td>
+      </tr>
+    </table>
+    <button (click)="approve()" class="btn btn-outline-success">Approve</button>
+
+    <div>
+      <label class='col-form-label col-sm-2' for="purchaseRequestRejectionReason">Rejection Reason:</label>
+<input [(ngModel)]='purchaseRequest.ReasonForRejection' name='RejectionReason' type="text" class="form-control col-sm-6" id="purchaseRequestRejectionReason"
+  aria-describedby="RejectionReasonHelp" placeholder="RejectionReason">
+<small id="RejectionReasonHelp" class="form-text text-muted col-sm-2">The Rejection Reason</small>
+    <button (click)="reject()" class="btn btn-outline-danger">Reject</button>
+    </div>
+  </div>
+</div>
+
+

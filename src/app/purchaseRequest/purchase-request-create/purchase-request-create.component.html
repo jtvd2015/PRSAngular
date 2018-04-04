@@ -14,29 +14,9 @@
             <small id="JustificationHelp" class="form-text text-muted col-sm-2">The Justification</small>
         </div>
         <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="purchaseRequestRejectionReason">Rejection Reason:</label>
-            <input [(ngModel)]='purchaseRequest.ReasonForRejection' name='RejectionReason' type="text" class="form-control col-sm-6" id="purchaseRequestRejectionReason" aria-describedby="RejectionReasonHelp" placeholder="RejectionReason">
-            <small id="RejectionReasonHelp" class="form-text text-muted col-sm-2">The RejectionReason</small>
-        </div>
-        <div class="form-group row">
             <label class='col-form-label col-sm-2' for="DeliveryMode">Delivery Mode:</label>
             <input [(ngModel)]='purchaseRequest.DeliveryMode' name='DeliveryMode' type="text" class="form-control col-sm-6" id="DeliveryMode" aria-describedby="DeliveryModeHelp" placeholder="DeliveryMode">
             <small id="DeliveryModeHelp" class="form-text text-muted col-sm-2">The Delivery Mode</small>
-        </div>
-        <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="Status">Status:</label>
-            <input [(ngModel)]='purchaseRequest.Status' name='DeliveryMode' type="text" class="form-control col-sm-6" id="Status" aria-describedby="StatusHelp" placeholder="Status">
-            <small id="StatusHelp" class="form-text text-muted col-sm-2">The Status</small>
-        </div>
-        <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="Total">Total:</label>
-            <input [(ngModel)]='purchaseRequest.Total' name='Total' type="text" class="form-control col-sm-6" id="Total" aria-describedby="TotalHelp" placeholder="Total">
-            <small id="TotalHelp" class="form-text text-muted col-sm-2">The Total</small>
-        </div>
-        <div class="form-group row">
-            <label class='col-form-label col-sm-2' for="Active">Active:</label>
-            <input [(ngModel)]='purchaseRequest.Active' name='ActiveMode' type="checkbox" class="form-control col-sm-6" id="Active" aria-describedby="ActiveHelp" placeholder="ActiveMode">
-            <small id="ActiveHelp" class="form-text text-muted col-sm-2">The ActiveMode</small>
         </div>
         <div class='form-group row'>
             <label class='col-form-label col-sm-2' for="purchaseRequestuser">User:</label>
@@ -47,7 +27,7 @@
             </div>
         </div>
         <div>
-            <button (click)="create()" class="btn btn-warning">Create</button>
+            <button (click)="create()" class="btn btn-outline-success">Create</button>
         </div>
     </div>
 </div>

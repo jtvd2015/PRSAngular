@@ -8,6 +8,11 @@ const url = 'http://localhost:54659/PurchaseRequests/';
 
 @Injectable()
 export class PurchaseRequestService {
+
+  ReviewList(): Observable<PurchaseRequest[]> {
+    return this.http.get(url + 'ReviewList') as Observable<PurchaseRequest[]>;
+  }
+
   List(): Observable<PurchaseRequest[]> {
     return this.http.get(url + 'List') as Observable<PurchaseRequest[]>;
   }

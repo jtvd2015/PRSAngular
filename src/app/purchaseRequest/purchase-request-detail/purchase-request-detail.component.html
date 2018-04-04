@@ -3,7 +3,7 @@
         <span>{{ pagetitle }}</span>
     </div>
     <div id="content" *ngIf="purchaseRequest">
-        <table class="table table-sm">
+        <table class="table table-striped">
             <tr>
                 <th>Id</th>
                 <td>{{purchaseRequest.Id}}</td>
@@ -38,16 +38,13 @@
             </tr>
             <tr>
                 <th>User</th>
-                <td>{{purchaseRequest.Users.FirstName}}</td>
+                <td>{{purchaseRequest.Users.FirstName+" "+purchaseRequest.Users.LastName}}</td>
             </tr>
         </table>
-        <a routerLink="/purchaseRequests/edit/{{purchaseRequest.Id}}" class="btn btn-warning">Edit</a> |
-        <button (click)="verify()" class="btn btn-danger">Delete</button>
-        <!--<span [hidden]="isHidden">|
-      <button (click)="remove()" class="btn btn-danger">Verify Delete</button>
-    </span>-->
+        <a routerLink="/purchaseRequests/edit/{{purchaseRequest.Id}}" class="btn btn-outline-warning">Edit</a> |
+        <button (click)="verify()" class="btn btn-outline-danger">Delete</button>
         <span [hidden]="purchaseRequest.Status=='REVIEW'">|
-      <button (click)="review()" class="btn btn-primary">Review</button>
+      <button (click)="review()" class="btn btn-outline-primary">Submit for Review</button>
     </span>
     </div>
 </div>

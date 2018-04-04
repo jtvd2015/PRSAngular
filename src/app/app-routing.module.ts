@@ -8,6 +8,8 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+
 
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
@@ -23,60 +25,48 @@ import { PurchaseRequestListComponent } from './purchaseRequest/purchase-request
 import { PurchaseRequestDetailComponent } from './purchaseRequest/purchase-request-detail/purchase-request-detail.component';
 import { PurchaseRequestCreateComponent } from './purchaseRequest/purchase-request-create/purchase-request-create.component';
 import { PurchaseRequestEditComponent } from './purchaseRequest/purchase-request-edit/purchase-request-edit.component';
+import { PurchaseRequestLinesComponent } from './purchaseRequest/purchase-request-lines/purchase-request-lines.component';
+import { PurchaseRequestReviewComponent } from './purchaseRequest/purchase-request-review/purchase-request-review.component';
+import { PurchaseRequestReviewItemComponent } from './purchaseRequest/purchase-request-review-item/purchase-request-review-item.component';
 
 // tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineItemListComponent } from './purchaseRequestLineItem/purchase-request-lineitem-list/purchase-request-lineitem-list.component';
+import { PurchaseRequestLineItemListComponent } from './purchaseRequestLineItem/purchase-request-lineitem-list/purchase-requestline-list.component';
 // tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineItemDetailComponent } from './purchaseRequestLineItem/purchase-request-lineitem-detail/purchase-request-lineitem-detail.component';
+import { PurchaseRequestLineItemDetailComponent } from './purchaseRequestLineItem/purchase-request-lineitem-detail/purchase-requestline-detail.component';
 // tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineItemCreateComponent } from './purchaseRequestLineItem/purchase-request-lineitem-create/purchase-request-lineitem-create.component';
+import { PurchaseRequestLineItemCreateComponent } from './purchaseRequestLineItem/purchase-request-lineitem-create/purchase-requestline-create.component';
 // tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineItemEditComponent } from './purchaseRequestLineItem/purchase-request-lineitem-edit/purchase-request-lineitem-edit.component';
-
-// tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineListComponent } from './purchaseRequestLine/purchase-requestline-list/purchase-requestline-list.component';
-// tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineDetailComponent } from './purchaseRequestLine/purchase-requestline-detail/purchase-requestline-detail.component';
-// tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineCreateComponent } from './purchaseRequestLine/purchase-requestline-create/purchase-requestline-create.component';
-// tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineEditComponent } from './purchaseRequestLine/purchase-requestline-edit/purchase-requestline-edit.component';
+import { PurchaseRequestLineItemEditComponent } from './purchaseRequestLineItem/purchase-request-lineitem-edit/purchase-requestline-edit.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
+  { path: 'purchaseRequests/', redirectTo: '/home', pathMatch: 'full' },
+
   {
-    path: 'purchaseRequestLine/create/:Id',
-    component: PurchaseRequestLineItemCreateComponent
+    path: 'purchaseRequests/review/:Id',
+    component: PurchaseRequestReviewItemComponent
   },
   {
-    path: 'purchaseRequestLine/detail/:Id',
-    component: PurchaseRequestLineItemDetailComponent
-  },
-  {
-    path: 'purchaseRequestLine/edit/:Id',
-    component: PurchaseRequestLineItemEditComponent
-  },
-  {
-    path: 'purchaseRequestLine/list',
-    component: PurchaseRequestLineItemListComponent
+    path: 'purchaseRequests/review',
+    component: PurchaseRequestReviewComponent
   },
 
   {
-    path: 'purchaseRequestLineItems/create/',
+    path: 'purchaseRequestLineItems/create/:Id',
     component: PurchaseRequestLineItemCreateComponent
   },
   {
-    path: 'purchaseRequestLineItems/detail/:Id',
+    path: 'purchaseRequestLineItems/detail/:prId/:Id',
     component: PurchaseRequestLineItemDetailComponent
   },
   {
-    path: 'purchaseRequestLineItems/edit/:Id',
+    path: 'purchaseRequestLineItems/edit/:prId/:Id',
     component: PurchaseRequestLineItemEditComponent
   },
   {
-    path: 'purchaseRequestLineItems/list',
+    path: 'purchaseRequestLinesItems/list',
     component: PurchaseRequestLineItemListComponent
   },
 
@@ -93,11 +83,15 @@ const routes: Routes = [
     component: PurchaseRequestEditComponent
   },
   { path: 'purchaseRequests/list', component: PurchaseRequestListComponent },
+  {
+    path: 'purchaseRequests/lines/:Id',
+    component: PurchaseRequestLinesComponent
+  },
 
-  { path: 'products/create', component: ProductCreateComponent },
   { path: 'products/detail/:Id', component: ProductDetailComponent },
   { path: 'products/edit/:Id', component: ProductEditComponent },
   { path: 'products/list', component: ProductListComponent },
+  { path: 'products/create', component: ProductCreateComponent },
 
   { path: 'vendors/create', component: VendorCreateComponent },
   { path: 'vendors/detail/:Id', component: VendorDetailComponent },
@@ -108,6 +102,7 @@ const routes: Routes = [
   { path: 'users/detail/:Id', component: UserDetailComponent },
   { path: 'users/edit/:Id', component: UserEditComponent },
   { path: 'users/list', component: UserListComponent },
+  { path: 'users/login', component: UserLoginComponent },
 
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },

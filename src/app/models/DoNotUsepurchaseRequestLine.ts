@@ -1,4 +1,4 @@
-export class PurchaseRequestLineItem {
+export class PurchaseRequestLine {
   Id: number;
   PurchaseRequestsId: number;
   ProductsId: string;

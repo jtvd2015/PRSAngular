@@ -21,6 +21,7 @@ export class UserLoginComponent implements OnInit {
   ) { }
 
   login(): void {
+    console.log(this.user);
     this.UserSvc.Login(this.user.UserName, this.user.Password)
     .subscribe(res => {
       if(res.Result.toUpperCase() === 'SUCCESS') {
@@ -40,10 +41,10 @@ export class UserLoginComponent implements OnInit {
     this.SysSvc.setIsLogin();
   }
 
-  ngOnDestroy() {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    
+  ngOnDestroy(): void {
+    // Called once, before the instance is destroyed.
+    // Add 'implements OnDestroy' to the class.
+
   }
 
 }

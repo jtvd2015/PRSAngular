@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { SystemService } from '../services/system.service';
 
 import { PurchaseRequestLineItem } from '../models/purchaseRequestLineItem';
 
@@ -26,5 +27,5 @@ export class PurchaseRequestLineItemService {
     return this.http.post(url + 'Remove', purchaseRequestLineItem) as Observable<any>;
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private sys: SystemService) {}
 }

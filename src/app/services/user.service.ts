@@ -15,10 +15,9 @@ export class UserService {
     private sys: SystemService
   ) {}
 
-  Login(username: string, password: string): Observable<any> {
-    let furl = this.sys.url('Users', 'Login', username, password);
-    return this.http.get(furl) as Observable<any>;
-    // return this.http.get(url+"Login/"+username+"/"+password) as Observable<any>;
+  Login(UserName: string, Password: string): Observable<any> {
+    let furl = this.sys.url('Users', 'Login', UserName, Password);
+    return this.http.get(url+"Login/"+UserName+"/"+Password) as Observable<any>;
   }
   List(): Observable<User[]> {
     return this.http.get(url + 'List') as Observable<User[]>;

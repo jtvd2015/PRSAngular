@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { PurchaseRequestLineService } from '../../services/purchaseRequestLine.service';
-import { PurchaseRequestLine } from '../../models/purchaseRequestLine';
-import { PurchaseRequestLineItemService } from '../../services/purchaseRequestLineItem.service';
 import { PurchaseRequestLineItem } from '../../models/purchaseRequestLineItem';
+import { PurchaseRequestLineItemService } from '../../services/purchaseRequestLineItem.service';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product';
 import { SystemService } from '../../services/system.service';
@@ -14,7 +12,7 @@ import { SystemService } from '../../services/system.service';
   templateUrl: './purchase-requestline-create.component.html',
   styleUrls: ['./purchase-requestline-create.component.css']
 })
-export class PurchaseRequestLineCreateComponent implements OnInit {
+export class PurchaseRequestLineItemCreateComponent implements OnInit {
   pagetitle: string = 'Purchase Request Line Create';
   purchaseRequestId: number;
   purchaseRequestLineItem: PurchaseRequestLineItem = new PurchaseRequestLineItem(
@@ -27,7 +25,6 @@ export class PurchaseRequestLineCreateComponent implements OnInit {
   products: Product[];
 
   constructor(
-    private PurchaseRequestLineSvc: PurchaseRequestLineService,
     private PurchaseRequestLineItemSvc: PurchaseRequestLineItemService,
     private ProductSvc: ProductService,
     private Sys: SystemService,
@@ -46,7 +43,9 @@ export class PurchaseRequestLineCreateComponent implements OnInit {
       this.purchaseRequestLineItem
     ).subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('/purchaseRequestLineItems/list');
+      this.router.navigateByUrl(
+        '/purchaseRequests/lines/' + this.purchaseRequestId
+      );
     });
   }
 

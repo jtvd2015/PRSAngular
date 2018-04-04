@@ -38,26 +38,20 @@ import { PurchaseRequestDetailComponent } from './purchaseRequest/purchase-reque
 import { PurchaseRequestEditComponent } from './purchaseRequest/purchase-request-edit/purchase-request-edit.component';
 import { PurchaseRequestListComponent } from './purchaseRequest/purchase-request-list/purchase-request-list.component';
 
-
 // tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineItemListComponent } from './purchaseRequestLineItem/purchase-request-lineitem-list/purchase-request-lineitem-list.component';
+import { PurchaseRequestLineItemCreateComponent } from './purchaseRequestLineItem/purchase-request-lineitem-create/purchase-requestline-create.component';
 // tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineItemEditComponent } from './purchaseRequestLineItem/purchase-request-lineitem-edit/purchase-request-lineitem-edit.component';
+import { PurchaseRequestLineItemDetailComponent } from './purchaseRequestLineItem/purchase-request-lineitem-detail/purchase-requestline-detail.component';
 // tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineItemDetailComponent } from './purchaseRequestLineItem/purchase-request-lineitem-detail/purchase-request-lineitem-detail.component';
+import { PurchaseRequestLineItemEditComponent } from './purchaseRequestLineItem/purchase-request-lineitem-edit/purchase-requestline-edit.component';
 // tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineItemCreateComponent } from './purchaseRequestLineItem/purchase-request-lineitem-create/purchase-request-lineitem-create.component';
-
+import { PurchaseRequestLineItemListComponent } from './purchaseRequestLineItem/purchase-request-lineitem-list/purchase-requestline-list.component';
 
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { SystemService } from './services/system.service';
-// tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineCreateComponent } from './purchaseRequestLine/purchase-requestline-create/purchase-requestline-create.component';
-// tslint:disable-next-line:max-line-length
-import { PurchaseRequestLineDetailComponent } from './purchaseRequestLine/purchase-requestline-detail/purchase-requestline-detail.component';
-import { PurchaseRequestLineEditComponent } from './purchaseRequestLine/purchase-requestline-edit/purchase-requestline-edit.component';
-import { PurchaseRequestLineListComponent } from './purchaseRequestLine/purchase-requestline-list/purchase-requestline-list.component';
-import { PurchaseRequestLineService } from './services/purchaseRequestLine.service';
+import { PurchaseRequestLinesComponent } from './purchaseRequest/purchase-request-lines/purchase-request-lines.component';
+import { PurchaseRequestReviewItemComponent } from './purchaseRequest/purchase-request-review-item/purchase-request-review-item.component';
+import { PurchaseRequestReviewComponent } from './purchaseRequest/purchase-request-review/purchase-request-review.component';
 
 @NgModule({
   declarations: [
@@ -82,15 +76,17 @@ import { PurchaseRequestLineService } from './services/purchaseRequestLine.servi
     PurchaseRequestDetailComponent,
     PurchaseRequestEditComponent,
     PurchaseRequestCreateComponent,
+    PurchaseRequestReviewComponent,
+    PurchaseRequestReviewItemComponent,
     UserLoginComponent,
-    PurchaseRequestLineItemListComponent,
-    PurchaseRequestLineItemEditComponent,
-    PurchaseRequestLineItemDetailComponent,
     PurchaseRequestLineItemCreateComponent,
-    PurchaseRequestLineCreateComponent,
-    PurchaseRequestLineDetailComponent,
-    PurchaseRequestLineEditComponent,
-    PurchaseRequestLineListComponent
+    PurchaseRequestLineItemDetailComponent,
+    PurchaseRequestLineItemEditComponent,
+    PurchaseRequestLineItemListComponent,
+    PurchaseRequestLineItemCreateComponent,
+    PurchaseRequestLinesComponent,
+    PurchaseRequestReviewItemComponent,
+    PurchaseRequestReviewComponent
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [
@@ -99,7 +95,6 @@ import { PurchaseRequestLineService } from './services/purchaseRequestLine.servi
     ProductService,
     PurchaseRequestService,
     PurchaseRequestLineItemService,
-    PurchaseRequestLineService,
     SystemService
   ],
   bootstrap: [AppComponent]

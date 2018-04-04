@@ -3,7 +3,7 @@
         <span>{{ pagetitle }}</span>
     </div>
     <div id="content" *ngIf="product">
-        <table class="table table-sm">
+        <table class="table table-striped">
             <tbody>
                 <tr>
                     <th>Id</th>
@@ -31,7 +31,7 @@
                 </tr>
             </tbody>
         </table>
-        <a routerLink="/products/edit/{{product.Id}}" class="btn btn-warning">Edit</a>
-        <button (click)="remove()" class="btn btn-danger">Delete</button>
+        <a routerLink="/products/edit/{{product.Id}}" class="btn-outline-warning">Edit</a>
+        <button (click)="remove()" class="btn btn-outline-danger">Delete</button>
     </div>
 </div>

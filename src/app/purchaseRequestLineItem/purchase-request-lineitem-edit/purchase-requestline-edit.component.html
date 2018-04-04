@@ -1,0 +1,24 @@
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+  </div>
+  <div id="content" *ngIf="purchaseRequestLineItem">
+    <div class='form-group row'>
+      <label class='col-form-label col-sm-2' for="purchaseRequestLineItemProduct">Product:</label>
+      <div class='col-sm-6 select-list'>
+      <select [(ngModel)]='purchaseRequestLineItem.ProductId' [compareWith]='compareFn' class='form-control col-sm-6' name='Product' id='purchaseRequestLineItem-Product'>
+          <option *ngFor="let product of products" [ngValue]="product.Id" [selected]="product.Id == purchaseRequestLineItem.ProductId">{{product.Name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class='col-form-label col-sm-2' for="purchaseRequestLineItemQuantity">Quantity:</label>
+      <input [(ngModel)]='purchaseRequestLineItem.Quantity' name='Quantity' type="number" class="form-control col-sm-6" id="purchaseRequestLineItemQuantity"
+        aria-describedby="QuantityHelp" placeholder="Quantity">
+      <small id="QuantityHelp" class="form-text text-muted col-sm-2">The Quantity</small>
+    </div>
+
+    <div>
+      <button (click)="change()" class="btn btn-outline-warning">Change</button>
+    </div>
+</div>

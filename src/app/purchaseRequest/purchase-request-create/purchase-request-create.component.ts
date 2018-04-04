@@ -14,7 +14,17 @@ import { SystemService } from '../../services/system.service';
 })
 export class PurchaseRequestCreateComponent implements OnInit {
   pagetitle: string = 'PurchaseRequest Create';
-  purchaseRequest: PurchaseRequest = new PurchaseRequest(0, 0, '', 'Not Needed', 'USPS', 'NEW', 0, true, 'Not Needed');
+  purchaseRequest: PurchaseRequest = new PurchaseRequest(
+    0,
+    0,
+    '',
+    'Not Needed',
+    'USPS',
+    'NEW',
+    0,
+    true,
+    'Not Needed'
+  );
   users: User[];
 
   constructor(
@@ -32,7 +42,6 @@ export class PurchaseRequestCreateComponent implements OnInit {
   }
 
   create(): void {
-    console.log('this.purchaseRequest', this.purchaseRequest);
     this.PurchaseRequestSvc.Create(this.purchaseRequest).subscribe(res => {
       console.log(res);
       this.router.navigateByUrl('/purchaseRequests/list');
